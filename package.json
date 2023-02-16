@@ -1,20 +1,23 @@
 {
-  "name": "primtime-three",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abdallahaac/primtime-three-js.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/abdallahaac/primtime-three-js/issues"
-  },
-  "homepage": "https://github.com/abdallahaac/primtime-three-js#readme"
+	"name": "primtime-three",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/abdallahaac/primtime-three-js.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/abdallahaac/primtime-three-js/issues"
+	},
+	"homepage": "https://github.com/abdallahaac/primtime-three-js#readme",
+	"devDependencies": {
+		"file-loader": "^6.2.0"
+	}
 }
