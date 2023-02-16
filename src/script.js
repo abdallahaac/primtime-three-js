@@ -12,17 +12,17 @@ const canvas = document.querySelector("canvas.webgl");
 const scene = new THREE.Scene();
 
 // Create the particles
-var particleCount = 1000;
-var particlePositions = new Float32Array(particleCount * 3);
+var particleCount = 500;
+var particlePositions = new Float32Array(particleCount);
 var particleColors = new Float32Array(particleCount * 3);
 var particleSizes = new Float32Array(particleCount);
 
 var color = new THREE.Color();
 
 for (var i = 0; i < particleCount; i++) {
-	particlePositions[i * 3 + 0] = Math.random() * 500 - 250;
-	particlePositions[i * 3 + 1] = Math.random() * 500 - 250;
-	particlePositions[i * 3 + 2] = Math.random() * 500 - 250;
+	particlePositions[i * 3 + 0] = (Math.random() - 0.5) * 10;
+	particlePositions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+	particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 10;
 
 	color.setHSL(i / particleCount, 1.0, 0.5);
 
@@ -30,7 +30,7 @@ for (var i = 0; i < particleCount; i++) {
 	particleColors[i * 3 + 1] = color.g;
 	particleColors[i * 3 + 2] = color.b;
 
-	particleSizes[i] = 2;
+	particleSizes[i] = 0.01;
 }
 
 var particleGeometry = new THREE.BufferGeometry();
@@ -48,7 +48,7 @@ particleGeometry.setAttribute(
 );
 
 var particleMaterial = new THREE.PointsMaterial({
-	size: 2,
+	size: 0.04,
 	vertexColors: THREE.VertexColors,
 });
 
