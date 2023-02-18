@@ -56,8 +56,24 @@ var particleSystem = new THREE.Points(particleGeometry, particleMaterial);
 particleSystem.sortParticles = true;
 scene.add(particleSystem);
 
+let r = 0;
+let g = 0;
+let b = 0;
+
+window.addEventListener("click", () => {
+	let red = Math.floor(Math.random() * 256);
+	let green = Math.floor(Math.random() * 256);
+	let blue = Math.floor(Math.random() * 256);
+
+	r = red;
+	g = green;
+	b = blue;
+	directionalLight.color.setRGB(r / 255, g / 255, b / 255);
+});
+
+const rgb = `rgb(${r}, ${g}, ${b})`;
 // light
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+const directionalLight = new THREE.DirectionalLight(`rgb($,255,255)`, 0.5);
 scene.add(directionalLight);
 
 // texture
@@ -68,7 +84,7 @@ const firstGeo = new THREE.SphereGeometry();
 const firstGeoMaterial = new THREE.MeshPhongMaterial({
 	shininess: 400,
 	reflectivity: 1,
-	color: 0x0000ff,
+	color: 0xffffff,
 	normalMap: texture,
 });
 const firstGeoMesh = new THREE.Mesh(firstGeo, firstGeoMaterial);
